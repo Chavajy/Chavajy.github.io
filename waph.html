@@ -1,191 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>WAPH - Jithendra Chowdary Chava</title>
-<script src="email.js"></script>
-<script src="https://waph-uc.github.io/clock.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAPH Course Information</title>
+    <!-- Add Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        p {
+            color: #6c757d;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .list-group-item-info {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        a {
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-	
-<div class="container wrapper">
-	<div id="top">
-		<h1>Web Application Programming and Hacking</h1>
-		<h2>Front-end Web Development Lab</h2>
-		<h3>Instructor: Dr. Phu Phung</h3>
-	</div>
-	<div class="wrapper">
-		<div id="menubar">
-			<h3> Student: Jithendra Chowdary Chava</h3>
-			<div id="email" onclick="showhideEmail()">show my email</div>	
-			<img src ="images/headshot.jpeg" alt="my headshot" width="50">
-			
-		</div>
-  </div>
-</div>
-	<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<meta charset="utf-8">
-
-<title>WAPH-JITHENDRA CHOWDARY CHAVA</title>
-
-<title>Oval Image</title>
-
-<style>
-
-  .oval-image {
-
-    border-radius: 50%; /* Makes the image oval */
-
-    width: 200px; /* Adjust width as needed */
-
-    height: 200px; /* Adjust height as needed */
-
-    object-fit: cover; /* Ensures the image covers the oval shape */
-
-  }
-
-  .container {
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: right;
-
-  }
-
-  .image {
-
-    width: 200px; /* Adjust width as needed */
-
-    height: auto; /* Maintain aspect ratio */
-
-    margin-right: 20px; /* Add some space between image and content */
-
-  }
-
- 
-
-  .centered-text {
-
-    font-size: 30px;
-
-  }
-
-  .content {
-
-    flex: 1; /* Take up remaining space */
-
-  }
-
-</style>
-
-</head>
-
- 
-
-<body class="container">
-
-<div id="header"  >
-
-    <img src=https://Chavajy.github.io/headshot.jpeg class="oval-image" class="image"/>
-
-    <h3 class="centered-text">Jithendra Chowdary Chava</h3>
-
-    <a href=https://www.linkedin.com/in/jithendra-chava/>LinkedIn Profile</a>
-
-    <p>513.399.0762</p>
-
-    <p>jithendra.chava@gmail.com</p>
-
-   
-
-</div>
-
-<div class="content">
-
- 
-
- 
-
-<div id="left_box"></div>
-
-<div id="right_main">
-
- 
-
-<div id="qualifications">
-
-    <h3>Skills</h3>
-
-    <ul>
-
-        <li><b>Programming Languages- </b> Python, C, C++, HTML, SQL, CSS</li>
-
-        <li><b>Frame Works- </b> Springboot, javascript </li>
-
-        <li><b>Tools- </b> Eclipse, PyCharm, Visual Studio, MySQL </li>
-
-       
-
-    </ul>
-
-</div>
-
-<div id="work_experience">
-
-    <h3>Work Experience</h3>
-
-   
-
-</div>
-
-<div id="education">
-
-    <h3>Education</h3>
-
-    <ul>
-
-   <li> <p>Masters in Information Technology, University of Cincinnati   Dec. 2024</p> </li>
-
-    <li><p>Bachelors Of Technology in Information Technology , Vel Tech University  May, 2023</p> </li>
-
-</ul>
-
-</div>
-
-<div id="certifications">
-
-    <h3>Certifications</h3>
-
-    <ul>
-
-   <li> <p>“Oracle Cloud Infrastructure” recognized by Oracle Corporation</p> </li>
-
-    <li><p>FinTech Engineering Virtual Experience Program-GOLDMAN SACH</p> </li>
-	    <li><p>Bits and Bytes of Computer Networking – Coursera </p></li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</body>
-
-</html>
+    <div class="container">
+        <h1 class="display-4">WAPH - Web Application Programming and Hacking</h1>
+        <p class="lead">Instructor: Dr. Phu Phung</p>
+
+        <h2 class="mt-4">Student Information</h2>
+        <ul>
+            <li class="h5">Name: Jithendra Chowdary</li>
+        </ul>
+        <br>
+        <p>Course Information: </p>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info">Labs: Hands-on exercises in lectures</li>
+            <li class="list-group-item"><a href="https://github.com/Chavajy/waph-chavajy/tree/main/labs/lab1#readme">Lab 1: Foundations of the Web</a><br>Web technologies, the protocol HTTP, including the basic principles of web-based application programming are covered in this lab. focused on utilising TELNET and Analyzer to examine HTTP requests and responds and contrasting them with browser requests. My understanding of web application development grew, and I acquired the skills necessary to write CGI programming and incorporate HTML templates. This lab also covers developing PHP web applications. The final task uses Wireshark and curl for analysing HTTP Request and POST requests. The Laboratory technicians1 report was written in Markdown and submitted in PDF format using the Pandoc tool.</li>
+            <li class="list-group-item"><a href="https://github.com/pullasj/waph-pullasj/blob/main/labs/lab2/README.md">Lab 2: Front-end Web Development</a><br>Together with front-end development, the course covers web API setup, fundamental web design, JavaScript Ajax, jQuery, and CSS. In this first lab, we create basic HTML and append JavaScript script to HTML tags. We also include an analog and digital clock. Part 2 of the website gets and posts requests to echo.php use CSS styles that are generated externally and emphasized within the organization. Web services are used to generate unintentional comedy. In the same way, age can be inferred from HTML code. PDF documents are created with Pandoc.</li>
+        </ul>
+
+        <ul class="list-group mt-4">
+            <li class="list-group-item list-group-item-info">Hackations</li>
+            <li class="list-group-item"><a href="https://github.com/Chavajy/waph-chavajy">Hackathon 1: Cross-site Scripting Attacks and Defenses</a><br> This Hackathon centers on exploring XSS (Cross-Site Scripting) attacks with the goal of promoting awareness about potential vulnerabilities in web security. There are two main objectives:<br><br>Task 1 (Offensive): The objective is to exploit XSS vulnerabilities in a specified URL (http://waph-hackathon.eastus.cloudapp.azure.com/xss/) through six levels of attack. This requires comprehending the mechanics of XSS attacks, pinpointing vulnerabilities in the provided code, and employing various techniques.<br><br>Task 2 (Defensive): The second part focuses on thwarting XSS attacks by implementing secure coding practices. This involves integrating input validation and output sanitization into the code to prevent the execution of malicious scripts.</li>
+        </ul>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
