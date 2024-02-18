@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Resume - Start Bootstrap Theme</title>
+    <title>Chava profile</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,9 +19,24 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- React lib -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
+        <!-- Jquery lib -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H03D7K7WBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H03D7K7WBS');
+</script>
 
   </head>
 
@@ -55,9 +70,14 @@
             <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">projects</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
           </li>
         </ul>
+        <br>
+
       </div>
     </nav>
 
@@ -73,24 +93,9 @@
           </div>
           <p class="mb-5">To get placed in an organization and to work in a challenging environment <a href="waph.html">Web applications and hacking</a> where I can utilize my academic skills and knowledge for solving problems and professional growth along with my organization.</p>
           <ul class="list-inline list-social-icons mb-0">
+           <!-- Linked in and git hub -->
             <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/jithendra-chava/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -98,12 +103,28 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/Chavajy">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
+            </li>
+            <li>
+              <br>
+              <br>
+ <!-- React -->
+ <div id="root"></div>
+ <!-- React Script -->
+ <script src="js/main.edf8ac75.js"></script>
+ <script>
+   // Get a reference to the root div
+   const rootElement = document.getElementById('root');
+
+   // Render your React component inside the root div
+   ReactDOM.render(React.createElement(DigitalClock), rootElement);
+ </script>
+
             </li>
           </ul>
         </div>
@@ -220,7 +241,99 @@
           <p>I find pleasure in exploring the vast realm of cinema, appreciating its diverse genres and unique storytelling methods. Gaming, on the other hand, stimulates my creativity and strategic thinking, offering immersive experiences and connecting me with global communities. These hobbies enrich my leisure moments and fuel my imagination.</p>
       </div>
     </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+      <div class="my-auto">
+        <h2 class="mb-5">Projects </h2>
+        <ul class="fa-ul mb-0">
+          <li>
+              <h3 class="mb-0">Contact me for collob</h5>
+            </li>
+            <!-- Show my mail ID -->
+            <li><div id="email" onclick="showhideEmail()"><h5 class="mb-0">show my email</h5></div></li>
+            <script>
+              var shown = false;
+              function showhideEmail(){
+                if (shown){
+                document.getElementById('email').innerHTML = "<h5>Show my email</h5>";
+                shown = false;
+                }else{
+                var myemail ="<h5><a heref='mailto:jithendra" + "@" + "mail.uc.edu'>jithendra" + "@" + "mail.uc.edu</a></h5>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+                }
+              }
+            </script>
+            <br>
+            <h3 class="mb-0">Live API's</h3>
+            <li>
+            <h5 class="mb-0">Live Weather </h5>
+            <div id="Weather"></div>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $.get("https://api.weatherbit.io/v2.0/current?key=5d55d3bd2a3844f0a658a05b4d977cee&postal_code=45220&country=US", function (result) {
+                  if (result && result.data[0]) {
+                          var weatherDescription = result.data[0].weather.description;
+                          var iconCode = result.data[0].weather.icon;
+                          var weatherIcon = "<img src='https://www.weatherbit.io/static/img/icons/" + iconCode + ".png' alt='" + weatherDescription + "' style='width: 25px;'>";
+                          var temperature = result.data[0].temp;
+                          $("#Weather").html(weatherDescription + " " + weatherIcon + ", Temparature: " + temperature + "°C");
+                    } else {
+                        $("#Weather").text("Could not retrieve weather information at this time");
+                    }
+                });
+            </script>
+          </li>
+          <br>
+          <li><h5 class="mb-0">Jokes per one minute: </h5> <div id="joke"></div> </li>
+          <script>
+          function fetchNewJoke() {
+          $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function(result) {
+          if (result && result.joke) {
+              console.log("from jokeapi:" + JSON.stringify(result));
+              $("#joke").html(result.joke);
+          } else {
+              $("#joke").text("Could not retrieve a joke at this time");
+          }
+              });
+          }
+          fetchNewJoke();
+          setInterval(fetchNewJoke, 60000);
+          </script>
+           <hr>
+           <h3 class="mb-0">JavaScript</h3>
+           <br>
+           <!-- Analog clock -->
+          <li>
+            <h5 class="mb-0">Analog clock:</h5>
+            <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+          </li>
+          <script src="https://waph-uc.github.io/clock.js"></script>
+          <script>
+            // Analog Clock
+            var canvas= document.getElementById("analog-clock");
+            var ctx=canvas.getContext("2d");
+            var radius= canvas.height /2;
+            ctx.translate(radius, radius);
+            radius=radius * 0.90;
+            setInterval(drawClock, 1000);
+            function drawClock(){
+              drawFace(ctx, radius);
+              drawNumbers(ctx, radius);
+              drawTime(ctx, radius);
+            }
+          </script>
+          <br>
+          <!-- Show date -->
+          <li>
+            <h5 class="mb-0">Date:</h5>
+            <div id="date" onclick="document.getElementById('date').innerText=Date()">Click here to show date</div>
+          </li>
+        </ul>
+        </div>
 
+        </ul>
+      </div>
+      </section>
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
         <div class="my-auto">
           <h2 class="mb-5">Awards &amp; Certifications</h2>
@@ -251,6 +364,45 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+     <!-- Cookie Alert -->
+     <script>
+      // Function to set a cookie with a given name, value, and expiration date
+      function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Function to get the value of a cookie by its name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Function to display the welcome message based on cookie
+        function displayWelcomeMessage() {
+            var lastVisit = getCookie("lastVisit");
+            if (lastVisit) {
+                alert("Welcome back! Your last visit was " + lastVisit);
+            } else {
+                var currentDate = new Date().toUTCString();
+                setCookie("lastVisit", currentDate, 365); // Set cookie for 1 year
+                alert("Welcome to my homepage!");
+            }
+        }
+        displayWelcomeMessage();
+
+      </script>
 
   </body>
 
